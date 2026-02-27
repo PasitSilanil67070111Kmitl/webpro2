@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 30px;
+}
+/* ===== NAVBAR ===== */
+
+.navbar {
+    background: #1900ff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+.navbar a:hover {
+    color: #00b4ff;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    color: #e63946;
+    font-weight: bold;
+}
+
+.btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0056b3;
+}

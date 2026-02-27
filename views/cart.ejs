@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 30px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #111;
+            color: white;
+        }
+
+        img {
+            width: 80px;
+        }
+
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .empty {
+            font-size: 18px;
+            color: gray;
+        }
+
+        .btn {
+            padding: 8px 14px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>🛒 Your Shopping Cart</h2>
+
+<% if (data.length === 0) { %>
+
+    <p class="empty">Your cart is empty.</p>
+
+<% } else { %>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Storage</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    <% 
+        let total = 0; 
+        data.forEach((item)=>{ 
+        total += item.price;
+    %>
+
+        <tr>
+            <td><%= item.id %></td>
+            <td>
+                <img src="http://webdev.it.kmitl.ac.th/phone-images/<%= item.pimage %>">
+            </td>
+            <td><%= item.name %></td>
+            <td><%= item.storage %></td>
+            <td><%= item.price %> THB</td>
+        </tr>
+
+    <% }); %>
+
+    </tbody>
+</table>
+
+<div class="total">
+    Total: <%= total %> THB
+</div>
+
+<br>
+<a href="/menu">
+    <button class="btn">Continue Shopping</button>
+</a>
+
+<% } %>
+
+</body>
+</html>

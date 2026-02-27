@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Store</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="/" class="logo">📱 PhoneStore</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="/products">Products</a>
+        <a href="/cart">🛒 Cart</a>
+    </div>
+</nav>
+<h2>Phone Store</h2>
+<div class="container">
+<% data.forEach((item)=>{ %>
+
+    <div class="card">
+        <img src="http://webdev.it.kmitl.ac.th/phone-images/<%= item.pimage %>" 
+             alt="<%= item.name %>">
+
+        <div class="card-body">
+            <div class="card-title"><%= item.name %></div>
+
+            <div class="card-text">
+                Storage: <%= item.storage %><br>
+                Camera: <%= item.camera %>
+            </div>
+
+            <div class="card-footer">
+                <div class="price"><%= item.price %> THB</div>
+
+                <form action="/add-to-cart" method="POST">
+                    <input type="hidden" name="id" value="<%= item.id %>">
+                    <a href="/add-to-cart/<%= item.id %>" class="btn">Add to Cart</a>
+                </form>
+            </div>
+        </div>
+    </div>
+<% }); %>
+</div>
+
+</body>
+</html>
